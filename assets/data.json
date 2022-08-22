@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "Holy Bible",
+      "price": 25,
+      "img": "https://i.ibb.co/qYt7QDv/800px-The-Holman-Christian-Standard-Bible.jpg",
+      "description": "Book of life!",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "Headphones",
+      "price": 250,
+      "img": "https://i.ibb.co/R008VP7/image.png",
+      "description": "Listen to stuff!",
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "name": "Backpack",
+      "price": 79,
+      "img": "https://i.ibb.co/ZHQ6xdm/image.png",
+      "description": "Carry things around town!",
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "name": "Glasses",
+      "price": 125,
+      "img": "https://i.ibb.co/m88nc9k/teahub-io-inventor-wallpaper-2292908.jpg",
+      "description": "Now you can see!",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "name": "thermal cup",
+      "price": 9.5,
+      "img": "https://i.ibb.co/Jrp47Xn/image.png",
+      "description": "Drink anything with it!",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "name": "Shirt",
+      "price": 30,
+      "img": "https://i.ibb.co/WgKTS0B/image.png",
+      "description": "Wear it with style!",
+      "quantity": 1
+    }
+  ]

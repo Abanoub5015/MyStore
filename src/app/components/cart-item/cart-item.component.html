@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div class="card" [ngStyle]="{'width': '9rem' ,'border-radius': '20px'}" >
+    <img src="{{cart_i.img}}" alt="" [ngStyle]="{'border-radius': '20px'}"> 
+  </div>
+
+  <div [ngStyle]="{'margin-right': '100px'}"> 
+    <h5>{{cart_i.name}}</h5>
+    <h6>price: {{cart_i.price}}$</h6>
+    <h6>quantity: {{cart_i.quantity}}</h6>
+    <button class="btn btn-primary" [ngStyle]="{'margin-right': '2px' , 'margin-left': '2px'}" (click)="minus_btn(cart_i)" [disabled]="cart_i.quantity === 1">-</button>
+    <button class="btn btn-primary" [ngStyle]="{'margin-right': '7px'}" (click)="plus_btn(cart_i)" [disabled]="cart_i.quantity === 10">+</button>
+    <button class="btn btn-danger" (click)="remove_cartItem_btn(cart_i)">Remove🗑️</button>
+  </div>
+</div>
+
+
+

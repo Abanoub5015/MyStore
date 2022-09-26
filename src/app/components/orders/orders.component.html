@@ -1,0 +1,8 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <h1 [ngStyle]="{'color': 'green'}">Success!🎉</h1>
+    <h3>thank you, <span [ngStyle]="{'color': 'green', 'font-size': '36px' }"> {{MyForm.name}}! </span> </h3>
+    <h3>Your <span [ngStyle]="{'color': 'green', 'font-size': '36px' }"> {{MyForm.total_i}}$ </span> order</h3>
+    <h3>will be shipped to this address <span [ngStyle]="{'color': 'green', 'font-size': '36px' }"> {{MyForm.address}} </span> </h3>
+    <a routerLink="/" class="btn btn-primary">⬅️ back to product list</a>
+</div>
+

@@ -1,0 +1,33 @@
+<!-- [oninput reference] https://stackoverflow.com/questions/44923237/how-i-set-maxlength-attribute-in-input-type-number-in-html5 -->
+
+<form [formGroup]="myform" (ngSubmit)="submitForm()">
+    <h6>Name</h6>
+    <input class="form-control" type="text" formControlName="name" placeholder="(minimum 3 chars)" [(ngModel)]="name" (ngModelChange)="validateName($event)"  required minlength="3" >
+    <div *ngIf="myform.controls['name'].touched && myform.controls['name'].invalid">
+        <span [ngStyle]="{'color': 'red'}" *ngIf="myform.controls['name'].errors?.['required']">Enter a name</span>
+        <span [ngStyle]="{'color': 'red'}" *ngIf="myform.controls['name'].errors?.['minlength']">Enter a name of at least 3 characters</span>
+    </div>
+    <br>
+
+    <h6>Address</h6>
+    <textarea class="form-control" formControlName="address" placeholder="(minimum 6 chars)" [(ngModel)]="address" (ngModelChange)="validateAddress($event)" required minlength="6"></textarea>
+    <div *ngIf="myform.controls['address'].touched && myform.controls['address'].invalid">
+        <span [ngStyle]="{'color': 'red'}" *ngIf="myform.controls['address'].errors?.['required']">Enter a valid address</span>
+        <span [ngStyle]="{'color': 'red'}" *ngIf="myform.controls['address'].errors?.['minlength']">Enter a address of at least 6 characters</span>
+    </div>
+    <br>
+
+    <h6>Credit card number</h6>
+    <input class="form-control" type="text" formControlName="creditCard" [(ngModel)]="creditCard"  (ngModelChange)="validateCreditCard($event)" placeholder="Enter 16-digit number" required minlength="16" required maxlength="16" 
+        oninput="javascript: if (this.value.length > this.maxLength)
+        this.value = this.value.slice(0, this.maxLength); 
+        this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '1');">
+        <div *ngIf="myform.controls['creditCard'].touched && myform.controls['creditCard'].invalid">
+            <span [ngStyle]="{'color': 'red'}" *ngIf="myform.controls['creditCard'].errors?.['required']">Enter a valid credit card number</span>
+            <span [ngStyle]="{'color': 'red'}" *ngIf="myform.controls['creditCard'].errors?.['minlength']">Enter a valid credit card number of 16-digits</span>
+        </div>
+    <br>
+    
+    <h4>Total Price:{{total_i}}$</h4>
+    <input [disabled]="myform.invalid" type="submit" value="Place Order" class="btn btn-success">
+</form>

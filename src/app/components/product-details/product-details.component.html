@@ -1,0 +1,21 @@
+<a routerLink="/">⬅️ back to product list</a>
+<div fxLayout="row" fxLayoutAlign="center center">
+  
+  <div class="card" [ngStyle]="{'width': '20rem','border-radius': '20px'}">
+    <img src="{{productDetails.img}}" alt="" [ngStyle]="{'border-radius': '20px'}">
+  </div>
+   
+  <div>
+    <h2>{{productDetails.name}}</h2>
+    <h4>{{productDetails.description}}</h4>
+    <h6>price: {{productDetails.price}}$</h6>
+    <h6>quantity: {{productDetails.quantity}}</h6>
+    <button class="btn btn-primary" [ngStyle]="{'margin-right': '2px' , 'margin-left': '2px'}" (click)="minus_btn(productDetails)" [disabled]="productDetails.quantity === 1">-</button>
+    <button class="btn btn-primary" [ngStyle]="{'margin-right': '7px'}" (click)="plus_btn(productDetails)" [disabled]="productDetails.quantity === 10">+</button>
+    <button class="btn btn-success" (click)="addToCart_parent_server(productDetails)">Add To Cart🛒</button>
+  </div>
+
+</div>
+
+
+

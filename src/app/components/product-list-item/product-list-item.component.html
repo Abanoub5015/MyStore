@@ -1,0 +1,13 @@
+<div class="card" [ngStyle]="{'width': '17rem'}">
+    <img class="img" [ngStyle]="{'height': '400px'}" src="{{product_i.img}}" alt="" (click)="openProductDetails_btn(product_i)">
+    <div [ngStyle]="{'margin-bottom': '9px'}">
+      <h5>{{product_i.name}}</h5>
+      <h6>price: {{product_i.price}}$</h6>
+      <h6>quantity: {{product_i.quantity}}</h6>
+      <button class="btn btn-primary" [ngStyle]="{'margin-right': '2px' , 'margin-left': '2px'}" (click)="minus_btn(product_i)" [disabled]="product_i.quantity === 1">-</button>
+      <button class="btn btn-primary" [ngStyle]="{'margin-right': '7px'}" (click)="plus_btn(product_i)" [disabled]="product_i.quantity === 10">+</button>
+      <button class="btn btn-success" (click)="addToCart_btn(product_i)">Add To Cart🛒</button>
+    </div>
+</div>
+
+

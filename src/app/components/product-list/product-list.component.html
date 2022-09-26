@@ -1,0 +1,8 @@
+<!-- [product_i]="product_tiv(template input variable)" using input-property-binding  -->
+
+<div fxLayout="row wrap" fxLayoutAlign="center" >
+    <app-product-list-item fxFlexOffset="1%" *ngFor="let product_tiv of products" [product_i]="product_tiv"
+     (addToCart_o)="addToCart_parent($event)"
+     (openProductDetails_o)="openProductDetails_parent($event)"
+    ></app-product-list-item>
+</div>

@@ -1,0 +1,18 @@
+<a routerLink="/">⬅️ back to product list</a>
+
+<div *ngIf="cartList.length === 0" fxLayoutAlign="center">
+  <img src="https://i.ibb.co/SdzC20Z/image.png" alt="">
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxLayout="column" > 
+    <app-cart-item fxFlexOffset="1%" *ngFor="let cart_tiv of cartList" [cart_i]="cart_tiv" 
+    (remove_cartItem_o)="remove_cartItem_parent($event)" ></app-cart-item>
+  </div>
+
+  <div *ngIf="cartList.length !== 0">
+    <app-cart-place-order-form (submitForm_o)="submitForm_parent($event)" [total_i]="TotalPrice()" ></app-cart-place-order-form>
+  </div>
+</div>
+
+<button *ngIf="cartList.length !== 0" class="btn btn-danger" (click)="clearCartsbtn()">Clear the entire cart</button>
